@@ -31,7 +31,9 @@ let str = "";
 enter.addEventListener('click', () => {
     str = str.concat(display.textContent);
     const sign = (str.match(regex)).join('');
-    const [a, b] = str.split(regex);
+    let [a, b] = str.split(regex);
+    a = Number(a)
+    b = Number(b)
     switch(sign) {
         case '/':
             display.textContent= divide(a, b);
